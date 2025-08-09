@@ -1,0 +1,33 @@
+/* Make the body a flex container with a vertical layout */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of viewport */
+  margin: 0; /* Remove default body margin */
+}
+
+/* Make main a flex container with a horizontal layout */
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto; /* Automatic width & height */
+}
+
+/* Article takes 2/3 of the space */
+article {
+  flex: 2;
+  overflow-y: auto; /* Enable vertical scroll if content overflows */
+}
+
+/* Aside takes 1/3 of the space */
+aside {
+  flex: 1;
+  overflow-y: auto; /* Enable vertical scroll if content overflows */
+}
+
+/* Optional: make header and footer distinct */
+header,
+footer {
+  padding: 10px;
+  background-color: #eee;
+}
