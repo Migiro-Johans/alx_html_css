@@ -1,55 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Headphones — Hero</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
-<body>
-  <header class="site-header">
-    <nav class="nav container">
-      <a href="#" class="brand">
-        <img src="./images/logo_headphones.png" alt="Headphones logo" class="brand__img" />
-        <span class="brand__text"></span>
-      </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Headphones</title>
+    <link rel="stylesheet" href="0-styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="images/logo_headphones.png" alt="Headphones Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">What we do</a></li>
+          <li><a href="#">Our results</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </nav>
 
-      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
-        <!-- simple hamburger -->
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav__links">
-        <li><a href="#what-we-do">what we do</a></li>
-        <li><a href="#our-results">our results</a></li>
-        <li><a href="#contact-us">contact us</a></li>
-      </ul>
-    </nav>
-
-    <section class="hero container">
-      <h1 class="hero__title">Lorem ipsum dolor set amet lorem ipsum</h1>
-      <p class="hero__subtitle">Lorem ipsum dolor set amet lorem ipsum dolor set</p>
-
-      <a href="#cta" class="btn btn--primary">call to action</a>
-
-      <p class="hero__desc">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-    </section>
-  </header>
-
-  <script>
-    // Mobile nav toggle (no external libs)
-    const toggle = document.querySelector('.nav__toggle');
-    const links  = document.querySelector('.nav__links');
-    toggle.addEventListener('click', () => {
-      const open = links.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      document.body.classList.toggle('no-scroll', open);
-    });
-  </script>
-</body>
+      <section class="hero-content">
+        <h1>Lorem ipsum dolor set amet lorem ipsum</h1>
+        <p>Lorem ipsum dolor set amet lorem ipsum dolor set</p>
+        <a href="#" class="btn">CALL TO ACTION</a>
+      </section>
+    </header>
+  </body>
 </html>
