@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Headphones</title>
+
+    <!-- Styles for Task 6 -->
+    <link rel="stylesheet" href="6-styles.css" />
+    <!-- Icon font (from earlier task, for nav/footer icons) -->
+    <link rel="stylesheet" href="holberton_school-icon/style.css" />
+  </head>
+  <body>
+    <!-- ===== Header / Hero ===== -->
+    <header class="hero">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="images/logo_headphones.png" alt="Headphones Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="#what-we-do">What we do</a></li>
+          <li><a href="#results">Our results</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <section class="hero-content">
+        <h1>Lorem ipsum dolor set amet lorem ipsum</h1>
+        <p>Lorem ipsum dolor set amet lorem ipsum dolor set</p>
+        <a href="#what-we-do" class="btn">CALL TO ACTION</a>
+      </section>
+    </header>
+
+    <!-- ===== What we do… (kept for continuity) ===== -->
+    <section id="what-we-do" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>What we do…</h2>
+          <p>
+            We craft high-fidelity sound experiences—from music streaming to spatial audio services—built for creators and listeners.
+          </p>
+        </header>
+
+        <ul class="features">
+          <li class="feature">
+            <span class="feature-icon holberton_school-icon-ic_sound" aria-hidden="true"></span>
+            <h3>Crystal-clear sound</h3>
+            <p>Studio-grade clarity with balanced profiles for every genre.</p>
+          </li>
+
+          <li class="feature">
+            <span class="feature-icon holberton_school-icon-ic_music" aria-hidden="true"></span>
+            <h3>Music & mastering</h3>
+            <p>Powerful tools to mix and optimize your tracks with precision.</p>
+          </li>
+
+          <li class="feature">
+            <span class="feature-icon holberton_school-icon-ic_video" aria-hidden="true"></span>
+            <h3>Media & streaming</h3>
+            <p>Seamless integration for podcasts and live streaming.</p>
+          </li>
+
+          <li class="feature">
+            <span class="feature-icon holberton_school-icon-ic_hearing" aria-hidden="true"></span>
+            <h3>Adaptive listening</h3>
+            <p>Smart profiles that adapt to your hearing and environment.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Our results (pure CSS pentagons) ===== -->
+    <section id="results" class="section section-dark section-results--code">
+      <div class="container">
+        <header class="section-header section-header-invert">
+          <h2>Our results</h2>
+          <p>Real impact across the board — rendered with code, not images.</p>
+        </header>
+
+        <ul class="pentagon-grid" role="list">
+          <!-- Each item is a pentagon made with clip-path; no images used -->
+          <li class="pentagon-card">
+            <div class="pentagon" style="--size: 170px">
+              <div class="pentagon-inner"></div>
+              <div class="pentagon-content" aria-label="Active listeners: more than 2 million">
+                <span class="kpi-value">+2M</span>
+                <span class="kpi-label">Active listeners</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="pentagon-card">
+            <div class="pentagon pentagon--accent" style="--size: 170px">
+              <div class="pentagon-inner"></div>
+              <div class="pentagon-content" aria-label="Satisfaction: 98 percent">
+                <span class="kpi-value">98%</span>
+                <span class="kpi-label">Satisfaction</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="pentagon-card">
+            <div class="pentagon" style="--size: 170px">
+              <div class="pentagon-inner"></div>
+              <div class="pentagon-content" aria-label="Faster delivery: 72 percent">
+                <span class="kpi-value">72%</span>
+                <span class="kpi-label">Faster delivery</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="pentagon-card">
+            <div class="pentagon pentagon--accent" style="--size: 170px">
+              <div class="pentagon-inner"></div>
+              <div class="pentagon-content" aria-label="App rating: 4.9 out of 5">
+                <span class="kpi-value">4.9</span>
+                <span class="kpi-label">App rating</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Contact us (kept for continuity) ===== -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <header class="section-header">
+          <h2>Contact us</h2>
+          <p>Questions, partnerships, or press? Send us a message and we’ll get back within 1–2 business days.</p>
+        </header>
+
+        <form class="contact-form" action="#" method="post" novalidate>
+          <div class="form-field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required minlength="2" />
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+
+          <div class="form-field">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+254 712 345 678" pattern="^[+()0-9\s-]{7,}$" />
+          </div>
+
+          <div class="form-field">
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic" required>
+              <option value="" disabled selected>Choose a topic</option>
+              <option value="support">Support</option>
+              <option value="sales">Sales</option>
+              <option value="press">Press</option>
+              <option value="partnerships">Partnerships</option>
+            </select>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us a bit more…" required minlength="10" rows="6"></textarea>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">I agree to the processing of my personal data.</label>
+          </div>
+
+          <button type="submit" class="btn btn-submit">Send message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== Footer (simple) ===== -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a href="#" class="footer-logo" aria-label="Headphones home">
+          <img src="images/logo_headphones.png" alt="Headphones Logo" />
+        </a>
+
+        <ul class="footer-nav">
+          <li><a href="#what-we-do">What we do</a></li>
+          <li><a href="#results">Our results</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ul>
+
+        <p class="footer-copy">© <span id="year"></span> Headphones, Inc.</p>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ===== Variables ===== */
+:root {
+  --primary: #ff6565;
+  --primary-2: #ff8a8a;     /* accent for alt pentagons */
+  --text: #071013;
+  --muted: #5a6369;
+  --bg: #fff;
+  --bg-dark: #0b0c10;
+  --fg: #fff;
+  --fg-muted: rgba(255,255,255,0.85);
+
+  --maxw: 1100px;
+  --radius: 16px;
+  --shadow: 0 8px 24px rgba(0,0,0,0.12);
+  --pad: 5%;
+  --gap: 2rem;
+
+  --font: "Helvetica Neue", Arial, sans-serif;
+
+  /* Form */
+  --field-bg: #fafafa;
+  --field-bd: #e6e6e6;
+  --field-bd-focus: #d9d9d9;
+  --field-text: #0f1419;
+}
+
+html { scroll-behavior: smooth; }
+
+/* ===== Base ===== */
+html, body { height: 100%; }
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+img { display: block; max-width: 100%; }
+
+/* ===== Hero ===== */
+.hero{
+  background: url("images/headphones_hero_1.jpg") no-repeat center/cover;
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: space-between;
+  color: var(--fg);
+}
+.navbar{
+  display:flex; justify-content:space-between; align-items:center;
+  padding: 2rem var(--pad);
+}
+.nav-links{ list-style:none; display:flex; gap:2rem; }
+.nav-links a{ color: var(--fg); text-decoration:none; font-weight:500; }
+.nav-links a:hover{ color: var(--primary); }
+.hero-content{ text-align:center; margin: 0 auto 6rem; padding: 0 var(--pad); max-width: 800px; }
+.hero-content h1{ font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+.hero-content p{ color: var(--fg-muted); margin-bottom: 2rem; font-size: 1.1rem; }
+.btn{
+  background: var(--primary); color: var(--fg); text-decoration:none;
+  padding: 1rem 2rem; border-radius: 999px; font-weight: 700; display:inline-block;
+  transition: opacity .25s ease, transform .15s ease;
+}
+.btn:hover{ opacity:.85; transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+
+/* ===== Generic Sections ===== */
+.section{ padding: clamp(3rem, 6vw, 6rem) var(--pad); }
+.container{ max-width: var(--maxw); margin: 0 auto; }
+.section-header{ text-align: center; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.section-header h2{ font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin-bottom: .6rem; }
+.section-header p{ color: var(--muted); max-width: 720px; margin: 0 auto; }
+.section-dark { background: radial-gradient(1200px 600px at 50% 0%, #171a20 0%, #0c0e12 60%, #090a0e 100%); color: var(--fg); }
+.section-header-invert h2{ color: var(--fg); }
+.section-header-invert p{ color: var(--fg-muted); }
+
+/* ===== What we do ===== */
+.features{
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+}
+.feature{
+  background: #ffffff;
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.feature-icon{
+  font-size: 3rem;
+  line-height: 1;
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+.feature h3{ font-size: 1.1rem; margin-bottom: .5rem; }
+.feature p{ color: var(--muted); font-size: .98rem; }
+
+/* ===== OUR RESULTS — pure CSS pentagons (no images) ===== */
+.section-results--code { position: relative; }
+
+.pentagon-grid{
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  gap: var(--gap);
+  justify-items: center;
+}
+
+/* Pentagon wrapper: uses CSS variables for size and creates a border via inset inner shape */
+.pentagon{
+  --size: 170px;
+  --stroke: 10px;
+  --bg-outer: var(--primary);
+  --bg-inner: #151923;
+
+  position: relative;
+  width: var(--size);
+  aspect-ratio: 1; /* keeps it square */
+  display: grid;
+  place-items: center;
+  color: var(--fg);
+  filter: drop-shadow(0 10px 25px rgba(255, 101, 101, 0.25));
+  /* The actual pentagon shape */
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.15), rgba(255,255,255,0) 45%),
+    var(--bg-outer);
+  transition: transform .18s ease, filter .18s ease;
+}
+.pentagon--accent{
+  --bg-outer: var(--primary-2);
+}
+
+.pentagon:hover{
+  transform: translateY(-2px);
+  filter: drop-shadow(0 14px 30px rgba(255, 101, 101, 0.35));
+}
+
+/* Inner layer creates a clean “stroke” around content (also a pentagon) */
+.pentagon-inner{
+  position: absolute;
+  inset: var(--stroke);
+  clip-path: inherit; /* same polygon */
+  background:
+    radial-gradient(circle at 70% 30%, rgba(255,255,255,.06), rgba(255,255,255,0) 50%),
+    var(--bg-inner);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 2px; /* small smoothing */
+}
+
+/* KPI content centered inside the pentagon */
+.pentagon-content{
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 0 0.75rem;
+}
+.kpi-value{
+  font-weight: 800;
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  letter-spacing: .4px;
+}
